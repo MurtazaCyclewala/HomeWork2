@@ -4,8 +4,7 @@ form {
     background-color: #ccc;
   }
   
-  /* Full-width inputs */
-  input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=date], input[radio] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -14,8 +13,7 @@ form {
     box-sizing: border-box;
   }
   
-  /* Set a style for all buttons */
-  button {
+button {
     background-color: #0e12f0;
     color: white;
     padding: 14px 20px;
@@ -25,32 +23,27 @@ form {
     width: 100%;
   }
   
-  /* Add a hover effect for buttons */
-  button:hover {
+button:hover {
     opacity: 0.8;
   }
   
-  /* Extra style for the cancel button (red) */
-  .signbttn {
+.signbttn {
     width: 100%;
     padding: 10px 20px;
     background-color: #04AA6D;
   }
   
-  /* Center the avatar image inside this container */
-  .imgcontainer {
+.imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
   }
   
-  /* Avatar image */
-  img.avatar {
+img.avatar {
     width: 40%;
     border-radius: 50%;
   }
   
-  /* Add padding to containers */
-  .container {
+.container {
     padding: 16px;
     border-radius: 4%;
   }
