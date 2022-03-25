@@ -1,6 +1,6 @@
 form {
     border: 3px solid #f1f1f1;
-    border-radius: 10%;
+    border-radius: 2%;
     background-color: #ccc;
   }
   
@@ -16,14 +16,13 @@ form {
   
   /* Set a style for all buttons */
   button {
-    background-color: #04AA6D;
+    background-color: #0e12f0;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
-    border-radius: 4%;
   }
   
   /* Add a hover effect for buttons */
@@ -35,8 +34,7 @@ form {
   .signbttn {
     width: 100%;
     padding: 10px 20px;
-    background-color: #0e12f0;
-    border-radius: 2%;
+    background-color: #04AA6D;
   }
   
   /* Center the avatar image inside this container */
