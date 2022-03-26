@@ -14,7 +14,8 @@
             <div class="imgcontainer">
               <img src="{{url_for('static',filename = 'SignUp.png')}}" class="avatar">
             </div>
-          
+            <p class=error style = "color: red;
+                                        text-align: center;"><strong></strong> {{ error }}
             <div class="container">
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="username" required>
@@ -41,6 +42,9 @@
 
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <label for="cpsw"><b>Confirm Password</b></label>
+                <input type="password" placeholder="Confirm Password" name="cpsw" required>
                 
                 <button type="submit">SignUp</button>
                 <label>
@@ -48,7 +52,7 @@
                 </label>
             
                 <div class="container" style="background-color:#f1f1f1">
-                    <button type="button" class="signbttn" onclick=location.href="/login">Already have an account</button>
+                    <button type="button" class="signbttn" onclick=location.href="/">Already have an account</button>
                 </div>
             </div>
           </form>

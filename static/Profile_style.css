@@ -1,0 +1,11 @@
+.form {
+    border: 3px solid #f1f1f1;
+    border-radius: 10%;
+    background-color: #ccc;
+}
+
+td
+{
+    font-size: 20px;
+    color: chartreuse;
+}
