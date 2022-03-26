@@ -9,9 +9,28 @@ app.config['MONGO_URI'] = 'mongodb://localhost:27017/Homework2'
 mongo = PyMongo(app)
 
 @app.route('/')
-def index():
+def profile():
     if 'username' in session:
-        return 'You are logged in as' + session['username']
+        users = mongo.db.users
+        login_users = users.find_one({'name' : session['username']})
+
+        img_source = ""
+        if login_users['Gender'] == "Male":
+            img_source = "static/male.jpg"
+        elif login_users['Gender'] == "Female":
+            img_source = "static/female.jpg"
+        else:
+            img_source = "static/other.png"
+
+        return render_template('Profile.html',
+                                fname = login_users['FirstName'],
+                                sname = login_users['SecondName'],
+                                tname = login_users['ThirdName'], 
+                                birth = login_users['Birthday'], 
+                                field = login_users['FOI'], 
+                                gender = login_users['Gender'],
+                                img = img_source)
+
     return render_template('Login.html')
 
 
@@ -22,7 +41,7 @@ def login():
     if login_users:
         if request.form['psw'] == login_users['password']:
             session['username'] = request.form['uname']
-            return redirect(url_for('index'))
+            return redirect(url_for('profile'))
         return render_template('Login.html',error="Invalid Username/Password")
     return render_template('Login.html',error="Invalid Username/Password Combination")
 
@@ -42,11 +61,16 @@ def signup():
                 'ThirdName' : request.form['tname'], 'Birthday' : request.form['birthday'],
                 'FOI' : request.form['field'], 'Gender' : request.form['gender']} )
                 session['username'] = request.form['username']
-                return redirect(url_for('index'))
+                return redirect(url_for('profile'))
             return render_template('SignUp.html',error="Please Enter Same password")
         return render_template('SignUp.html',error="That Username Exists")
     
     return render_template('SignUp.html')
+
+@app.route('/logout')
+def logOut():
+    session.pop('username',None)
+    return redirect('/')
 
 if __name__ == "__main__":
     app.run(host = "localhost",port =5000,debug = True)

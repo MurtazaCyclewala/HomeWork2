@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>
-            Login Page
+            Profile Page
         </title>
         <link rel="stylesheet" href="{{url_for('static',filename = 'Profile_style.css')}}" >
     </head>
@@ -10,7 +10,15 @@
                     margin-top: 5%;
                     background: linear-gradient(180deg, rgb(1, 197, 27), rgb(1, 97, 27))">
         <div class = "form">
-            <table>
+            <div class="imgcontainer">
+                <img src= {{ img }} class="avatar">
+              </div>
+            <h1 style = "font-size: 33px; 
+                        color: brown;
+                        text-align: center;">
+                Your Profile Page
+            </h1>
+            <table align="center">
                 <tr>
                     <th colspan="2" style="text-align: center;
                                             font-size: 32px;">
@@ -19,29 +27,33 @@
                 </tr>
                 <tr>
                     <td>First Name</td>
-                    <td> .. </td>
+                    <td> {{ fname }} </td>
                 </tr>
                 <tr>
                     <td>Second Name</td>
-                    <td> .. </td>
+                    <td> {{ sname }} </td>
                 </tr>
                 <tr>
                     <td>Third Name</td>
-                    <td> .. </td>
+                    <td> {{ tname }} </td>
                 </tr>
                 <tr>
                     <td>Birthday</td>
-                    <td> .. </td>
+                    <td> {{ birth }} </td>
                 </tr>
                 <tr>
                     <td>Field Of Interest</td>
-                    <td> .. </td>
+                    <td> {{ field }} </td>
                 </tr>
                 <tr>
                     <td>Gender</td>
-                    <td> .. </td>
+                    <td> {{ gender }} </td>
                 </tr>
             </table>
+
+            <button type="button" class="signbttn" onclick=location.href="{{url_for('logOut')}}">LogOut</button>
+            
+
         </div>
     </body>
 </html>
